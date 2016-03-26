@@ -1,22 +1,18 @@
-interface Props {
-
-}
-
 interface State {
     secondsElapsed: number,
 }
 
-
-class Timer extends React.Component<Props, State> {
+class Timer extends React.Component<{}, State> {
     private interval: number;
-    constructor(props: Props) {
-        super(props)
-    }
-    getInitialState() {
-        return { secondsElapsed: 0 };
-    }
-    tick() {
-        this.setState({ secondsElapsed: this.state.secondsElapsed + 1 });
+    private tick: () => void;
+    constructor() {
+        super()
+        this.state = {
+            secondsElapsed: 0
+        };
+        this.tick = () => {
+            this.setState({ secondsElapsed: this.state.secondsElapsed + 1 });
+        }
     }
     componentDidMount() {
         this.interval = setInterval(this.tick, 1000);
@@ -30,6 +26,7 @@ class Timer extends React.Component<Props, State> {
         );
     }
 }
+
 
 
 ReactDOM.render(
