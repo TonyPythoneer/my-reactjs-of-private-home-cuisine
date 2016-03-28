@@ -1,28 +1,27 @@
-interface Props {
-
-}
-
+/*
+ * Please refer this coding style:
+ *   https://github.com/DefinitelyTyped/DefinitelyTyped/blob/05746119789e2e2ab2206988643657a04229491c/react/react-tests.ts#L435
+ */
 interface State {
     secondsElapsed: number,
 }
 
 
-class Timer extends React.Component<Props, State> {
-    private interval: number;
-    constructor(props: Props) {
-        super(props)
-    }
-    getInitialState() {
-        return { secondsElapsed: 0 };
-    }
+class Timer extends React.Component<{}, State> {
+    public state = {
+        secondsElapsed: 0
+    };
+    private _interval: number;
     tick() {
-        this.setState({ secondsElapsed: this.state.secondsElapsed + 1 });
+        this.setState((prevState, props) => ({
+            secondsElapsed: prevState.secondsElapsed + 1
+        }));
     }
     componentDidMount() {
-        this.interval = setInterval(this.tick, 1000);
+        this._interval = setInterval(() => this.tick(), 1000);
     }
     componentWillUnmount() {
-        clearInterval(this.interval);
+        clearInterval(this._interval);
     }
     render() {
         return (

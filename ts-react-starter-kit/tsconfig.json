@@ -10,7 +10,6 @@
         "jsx": "react"
     },
     "exclude": [
-        "node_modules",
-        "postman"
+        "node_modules"
     ]
 }
