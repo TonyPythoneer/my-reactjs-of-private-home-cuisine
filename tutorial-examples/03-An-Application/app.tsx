@@ -20,39 +20,31 @@ class TodoList extends React.Component<ITodoListProps, {}> {
  *   http://stackoverflow.com/questions/33256274/typesafe-select-onchange-event-using-reactjs-and-typescript/33262554#33262554
  */
 class TodoApp extends React.Component<{}, ITodoAppState> {
-    private onChange: (e: Event) => void;
-    private handleSubmit: (e: Event) => void;
+    public state = { items: [], text: '' };
+    private _onChange(e: Event) {
+        // UI process: Only change text by inputting the value
+        this.setState({ text: (e.target as any).value });
+    };
+    private _handleSubmit(e: Event) {
+        e.preventDefault();
+        // Data process: Add new item to items
+        let nextItems = this.state.items.concat([{
+            text: this.state.text,
+            id: Date.now(),
+        }]);
+        // Data process: Erase text field
+        let nextText = '';
+        // Data process: Set the lastest result to state
+        this.setState({ items: nextItems, text: nextText });
+    };
 
-    constructor() {
-        super()
-        // getInitialState
-        this.state = { items: [], text: '' };
-
-        // actions
-        this.onChange = (e) => {
-            // UI process: Only change text by inputting the value
-            this.setState({ text: (event.target as any).value });
-        };
-        this.handleSubmit = (e) => {
-            e.preventDefault();
-            // Data process: Add new item to items
-            let nextItems = this.state.items.concat([{
-                text: this.state.text,
-                id: Date.now(),
-            }]);
-            // Data process: Erase text field
-            let nextText = '';
-            // Data process: Set the lastest result to state
-            this.setState({ items: nextItems, text: nextText });
-        };
-    }
     render() {
         return (
             <div>
                 <h3>TODO</h3>
                 <TodoList items={this.state.items} />
-                <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.onChange} value={this.state.text} />
+                <form onSubmit={this._handleSubmit.bind(this)}>
+                    <input onChange={this._onChange.bind(this)} value={this.state.text} />
                     <button>{'Add #' + (this.state.items.length + 1) }</button>
                 </form>
             </div>
