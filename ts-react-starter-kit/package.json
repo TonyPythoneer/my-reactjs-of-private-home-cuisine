@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "webpack",
-    "watch": "webpack -w"
+    "build:watch": "webpack -w"
   },
   "author": "TonyPythoneer",
   "license": "ISC",
