@@ -13,4 +13,3 @@ Simple demos
   3. [03-An-Application](https://tonypythoneer.github.io/react-lab/examples-on-official-website/03-An-Application/app.html)
   4. [04-A-Component-Using-External-Plugins](https://tonypythoneer.github.io/react-lab/examples-on-official-website/04-A-Component-Using-External-Plugins/app.html)
 
-:arrow_right_hook: [Root](https://tonypythoneer.github.io/react-lab)
