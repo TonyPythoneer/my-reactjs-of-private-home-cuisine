@@ -1,0 +1,28 @@
+{
+  "name": "react-lab",
+  "version": "1.0.0",
+  "description": "It's a creative react lab",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:TonyPythoneer/react-lab.git"
+  },
+  "scripts": {
+    "build": "webpack",
+    "build:watch": "webpack -w"
+  },
+  "author": "TonyPythoneer",
+  "license": "ISC",
+  "typescript": {
+    "definition": "typings/tsd.d.ts"
+  },
+  "dependencies": {
+    "marked": "^0.3.5",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "ts-loader": "^0.8.1",
+    "typescript": "^1.8.9",
+    "webpack": "^1.12.14"
+  }
+}
