@@ -1,14 +1,22 @@
 {
-  "name": "react-lab",
+  "name": "ts-react-starter-kit",
   "version": "1.0.0",
-  "description": "It's a creative react lab",
+  "description": "",
   "repository": {
     "type": "git",
     "url": "git@github.com:TonyPythoneer/react-lab.git"
   },
   "scripts": {
-    "build": "webpack",
-    "build:watch": "webpack -w"
+    "build": "concurrently --kill-others \"npm run build:ts\" \"npm run build:jade\"",
+    "build:ts": "tsc",
+    "build:jade": "jade index.jade",
+    "watch": "concurrently --kill-others \"npm run watch:ts\" \"npm run watch:jade\"",
+    "watch:ts": "tsc -w",
+    "watch:jade": "jade -w index.jade",
+    "bundle": "browserify dist/index.js -t uglifyjs > index.js",
+    "open:window": "start index.html",
+    "open:mac": "open index.html",
+    "open:linux": "xdg-open index.html"
   },
   "author": "TonyPythoneer",
   "license": "ISC",
@@ -16,13 +24,10 @@
     "definition": "typings/tsd.d.ts"
   },
   "dependencies": {
-    "marked": "^0.3.5",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   },
   "devDependencies": {
-    "ts-loader": "^0.8.1",
-    "typescript": "^1.8.9",
-    "webpack": "^1.12.14"
+    "typescript": "^1.8.9"
   }
 }

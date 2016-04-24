@@ -2,12 +2,14 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
+        "sourceMap": true,
         "declaration": false,
         "noImplicitAny": false,
         "removeComments": true,
-        "preserveConstEnums": true,
         "noLib": false,
-        "jsx": "react"
+        "outDir": "dist",
+        "rootDir": "src",
+        "noResolve": true
     },
     "exclude": [
         "node_modules"
