@@ -6,7 +6,7 @@ interface IMarkdownEditorState {
 }
 
 
-class MarkdownEditor extends React.Component<{},IMarkdownEditorState> {
+class MarkdownEditor extends React.Component<{},{}> {
     state = { value: 'Type some *markdown* here!' };
     refs: {
         [key: string]: React.ReactInstance;
