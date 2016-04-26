@@ -42,10 +42,22 @@
       "commit": "d95596ca622a23e258859a2d7d71c4af959da21a"
     },
     "redux/redux.d.ts": {
-      "commit": "2d448c0a3152e8871521848c5c2c61ab4e2a2cc9"
+      "commit": "310c247694d7f31bd2e3198f71c55221f7c3a3c7"
     },
     "react-redux/react-redux.d.ts": {
       "commit": "2d448c0a3152e8871521848c5c2c61ab4e2a2cc9"
+    },
+    "redux-devtools/redux-devtools.d.ts": {
+      "commit": "2d448c0a3152e8871521848c5c2c61ab4e2a2cc9"
+    },
+    "redux-devtools-dock-monitor/redux-devtools-dock-monitor.d.ts": {
+      "commit": "2d448c0a3152e8871521848c5c2c61ab4e2a2cc9"
+    },
+    "redux-devtools-log-monitor/redux-devtools-log-monitor.d.ts": {
+      "commit": "2d448c0a3152e8871521848c5c2c61ab4e2a2cc9"
+    },
+    "redux-thunk/redux-thunk.d.ts": {
+      "commit": "310c247694d7f31bd2e3198f71c55221f7c3a3c7"
     }
   }
 }
