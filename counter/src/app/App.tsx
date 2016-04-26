@@ -1,32 +1,48 @@
+/// <reference path="./typings/App.d.ts"/>
+import { IProps } from "App";
+
 import * as React from 'react';
-import { createStore } from 'redux';
+import { createStore, bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import reducer from './reducer';
 import Counter from '../counter/counter.component';
 import CounterApp from '../counter/counter.container';
+import * as counterActions from '../counter/counter.actions';
 
 
-class App extends React.Component<any, any> {
+// App
+interface IAppProp {
+    dispatch: Redux.Dispatch,
+}
+
+
+
+class App extends React.Component<IProps, any> {
     render() {
-        const { dispatch, counter } = this.props
-        console.log("App: ", this.props)
+        const { counter, counterActions } = this.props
         return (
             <div>
                 <CounterApp
-                    dispatch={ dispatch }
-                    counter={ counter } />
+                    actions={ counterActions }
+                    value={ counter.value } />
             </div>
         )
     }
 }
 
 
+// connect
 function mapStateToProps(state) {
     return { counter: state.counter };
 }
 
-interface IState {
-    value: number;
+
+function mapDispatchToProps(dispatch) {
+    return {
+        counterActions: bindActionCreators(counterActions, dispatch)
+    };
 }
-export default connect(mapStateToProps)(App)
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -1,18 +1,16 @@
+/// <reference path="./typings/counter.d.ts"/>
+import { IProps } from "counter";
+
 import * as React from 'react';
 import Counter from './counter.component';
 import { addOne, reduceOne } from './counter.actions'
 
 
-export default class CounterApp extends React.Component<any, any> {
+export default class CounterApp extends React.Component<IProps, any> {
     render() {
-        console.log("Counter: ", this.props)
-        const { dispatch, counter } = this.props;
+        //const { actions , value } = this.props;
         return (
-            <Counter
-                counter={ counter }
-                onAddClick={ num => dispatch(addOne(num)) }
-                onReduceClick={ num => dispatch(reduceOne(num)) }
-            />
+            <Counter {...this.props} />
         )
     }
 }

@@ -9,8 +9,7 @@ import configureStore from './app/configureStore';
 import DevTools from './app/DevTools';
 
 
-const store: Redux.Store = createStore(reducer, {}, (window as any).devToolsExtension ? (window as any).devToolsExtension() : DevTools.instrument());
-//const store: Redux.Store = configureStore();
+const store: Redux.Store = configureStore();
 const mainElement: HTMLElement = document.getElementById('main');
 
 

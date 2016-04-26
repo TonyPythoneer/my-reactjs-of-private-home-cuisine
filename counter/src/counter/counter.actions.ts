@@ -1,32 +1,34 @@
-// Constants for actions
-export const ADD_ONE = 'ADD_ONE';
-export const REDUCE_ONE = 'REDUCE_ONE';
-export const ADD_ONE_IF_ODD = 'ADD_ONE_IF_ODD';
-export const ASNYNC_ADD_ONE = 'ASNYNC_ADD_ONE';
+/// <reference path="./typings/counter.d.ts"/>
+import { IReducer } from "counter";
+
+import * as C from "./counter.constants";
 
 
-// Actions list
-export type Action = {
-    type: string,
-    value: number
-};
-
-
-export function addOne(value: number = 1) {
-    return { type: ADD_ONE, value };
+export function addOne(): any {
+    return { type: C.ADD_ONE };
 }
 
 
-export function reduceOne(value: number = -1) {
-    return { type: REDUCE_ONE, value };
+export function reduceOne(): any {
+    return { type: C.REDUCE_ONE };
 }
 
 
-export function addOneIfOdd(value: number = 1) {
-    return { type: ADD_ONE_IF_ODD, value };
+export function addOneIfOdd(): ReduxThunk.ThunkInterface {
+    return (dispatch: Redux.Dispatch, getState: () => IReducer) => {
+        const { counter } = getState();
+
+        if (counter.value % 2 === 0) { return; }
+
+        dispatch(addOne());
+    };
 }
 
 
-export function asntncAddOne(value: number = 1) {
-    return { type: ASNYNC_ADD_ONE, value };
+export function addOneAsync(delay: number = 1000): ReduxThunk.ThunkInterface {
+    return (dispatch: Redux.Dispatch) => {
+        setTimeout(() => {
+            dispatch(addOne());
+        }, delay);
+    };
 }
