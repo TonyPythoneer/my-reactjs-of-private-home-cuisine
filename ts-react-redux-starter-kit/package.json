@@ -1,0 +1,36 @@
+{
+  "name": "ts-react-starter-kit",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:TonyPythoneer/react-lab.git"
+  },
+  "scripts": {
+    "build": "concurrently --kill-others \"npm run build:ts\" \"npm run build:jade\"",
+    "build:ts": "tsc",
+    "build:jade": "jade index.jade",
+    "watch": "concurrently --kill-others \"npm run watch:ts\" \"npm run watch:jade\"",
+    "watch:ts": "tsc -w",
+    "watch:jade": "jade -w index.jade",
+    "bundle": "browserify dist/index.js -t uglifyjs > index.js",
+    "open:window": "start index.html",
+    "open:mac": "open index.html",
+    "open:linux": "xdg-open index.html"
+  },
+  "author": "TonyPythoneer",
+  "license": "ISC",
+  "typescript": {
+    "definition": "typings/tsd.d.ts"
+  },
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.2.0",
+    "typescript": "^1.8.9"
+  }
+}

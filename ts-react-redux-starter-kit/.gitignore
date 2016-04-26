@@ -1,0 +1,16 @@
+# Node.js
+#
+node_modules/
+
+# Typescript
+#
+typings/
+dist/
+
+# Jade
+#
+index.html
+
+# browserify
+#
+index.js
