@@ -7,10 +7,6 @@ node_modules/
 typings/
 dist/
 
-# Bundle
-#
-index.js
-
 # My style
 #
 !src/**/typings/

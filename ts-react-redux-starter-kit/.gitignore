@@ -7,14 +7,6 @@ node_modules/
 typings/
 dist/
 
-# Jade
-#
-index.html
-
-# Bundle
-#
-index.js
-
 # My style
 #
 !src/**/typings/
