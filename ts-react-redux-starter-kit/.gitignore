@@ -11,6 +11,10 @@ dist/
 #
 index.html
 
-# browserify
+# Bundle
 #
 index.js
+
+# My style
+#
+!src/**/typings/
