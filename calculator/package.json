@@ -1,7 +1,7 @@
 {
-  "name": "ts-react-starter-kit",
+  "name": "calculator",
   "version": "1.0.0",
-  "description": "",
+  "description": "calculator",
   "repository": {
     "type": "git",
     "url": "git@github.com:TonyPythoneer/react-lab.git"

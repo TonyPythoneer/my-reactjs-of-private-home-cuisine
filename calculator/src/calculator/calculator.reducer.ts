@@ -1,5 +1,4 @@
-import * as _ from "lodash";
-
+import objectAssign from "./../utils/object-assign";
 import * as C from "./calculator.constants";
 
 
@@ -21,7 +20,7 @@ export default function calculator(
             let currentTextNum = state.fresh ?
                 defualtTextNum : state.textNum;
             let newTextNum = currentTextNum + action.number;
-            return _.assign({}, state, {
+            return objectAssign({}, state, {
                 textNum: newTextNum,
                 fresh: false,
             })
@@ -29,23 +28,23 @@ export default function calculator(
             let newOp = action.op === '=' ? null: action.op;
             if (state.regOp) {
                 let result = excuteExpression(state)
-                return _.assign({}, {
+                return objectAssign({}, {
                     regOp: newOp,
                     textNum: result,
                     regNum: result,
                     fresh: true,
                 })
             } else {
-                return _.assign({}, state, {
+                return objectAssign({}, state, {
                     regOp: newOp,
                     regNum: state.textNum,
                     fresh: true,
                 })
             }
         case C.CLICK_CLEAN:
-            return _.assign({}, state, { textNum: "0" })
+            return objectAssign({}, state, { textNum: "0" })
         case C.CLICK_ALL_CLEAN:
-            return _.assign({}, state, {
+            return objectAssign({}, state, {
                 textNum: "0",
                 regNum: 0,
                 textOp: null,
