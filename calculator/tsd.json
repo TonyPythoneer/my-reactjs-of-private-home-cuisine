@@ -9,7 +9,7 @@
       "commit": "a44529fcb1e1cdc0355e71c42a6048de99b57c34"
     },
     "react/react.d.ts": {
-      "commit": "2d448c0a3152e8871521848c5c2c61ab4e2a2cc9"
+      "commit": "768a3952704566c0665550700bcb131eee7b91a1"
     },
     "react/react-addons-create-fragment.d.ts": {
       "commit": "d95596ca622a23e258859a2d7d71c4af959da21a"
@@ -54,9 +54,18 @@
       "commit": "2d448c0a3152e8871521848c5c2c61ab4e2a2cc9"
     },
     "redux-devtools-log-monitor/redux-devtools-log-monitor.d.ts": {
-      "commit": "2d448c0a3152e8871521848c5c2c61ab4e2a2cc9"
+      "commit": "768a3952704566c0665550700bcb131eee7b91a1"
     },
     "redux-thunk/redux-thunk.d.ts": {
+      "commit": "310c247694d7f31bd2e3198f71c55221f7c3a3c7"
+    },
+    "reselect/reselect.d.ts": {
+      "commit": "310c247694d7f31bd2e3198f71c55221f7c3a3c7"
+    },
+    "redux-actions/redux-actions.d.ts": {
+      "commit": "310c247694d7f31bd2e3198f71c55221f7c3a3c7"
+    },
+    "lodash/lodash.d.ts": {
       "commit": "310c247694d7f31bd2e3198f71c55221f7c3a3c7"
     }
   }

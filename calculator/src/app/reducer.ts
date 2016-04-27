@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 
-//import componentName from '../componentName/component-name.reducer'
+import calculator from '../calculator/calculator.reducer'
 
 
 export default <Redux.Reducer>combineReducers({
-    //counter,
+    calculator,
 });

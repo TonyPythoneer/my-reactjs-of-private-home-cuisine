@@ -1,19 +1,21 @@
-/// <reference path="./typings/App.d.ts"/>
-import { IProps } from "App";
-
 import * as React from 'react';
 import { createStore, bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import reducer from './reducer';
+import * as calculatorActions from '../calculator/calculator.actions'
+import CalculatorApp from '../calculator/calculator.container'
 
 
 // App
-class App extends React.Component<IProps, any> {
+class App extends React.Component<any, any> {
     render() {
-        const { } = this.props;
+        const { calculator, calculatorActions } = this.props;
         return (
-            <componentName />
+            <CalculatorApp
+                textNum={calculator.textNum}
+                textOp={calculator.textOp}
+                actions={calculatorActions}/>
         )
     }
 }
@@ -22,14 +24,14 @@ class App extends React.Component<IProps, any> {
 // connect
 function mapStateToProps(state) {
     return {
-        //counter: state.counter
+        calculator: state.calculator
     };
 }
 
 
 function mapDispatchToProps(dispatch) {
     return {
-        //counterActions: bindActionCreators(counterActions, dispatch)
+        calculatorActions: bindActionCreators(calculatorActions, dispatch)
     };
 }
 
