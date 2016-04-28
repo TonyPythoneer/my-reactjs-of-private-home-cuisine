@@ -20,7 +20,7 @@ export class CalculatorBoard extends React.Component<any, any > {
     renderButton(cell) {
         const { actions } = this.props;
         let event;
-        if (cell === null) { return <span/> }
+        if (cell === null) { return <span className={'empty-btn'} /> }
         if (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'].indexOf(cell) !== -1) {
             event = actions.inputNumber;
         } else if (['+', '-', '*', '/', '='].indexOf(cell) !== -1) {
@@ -30,7 +30,13 @@ export class CalculatorBoard extends React.Component<any, any > {
         } else if (cell === 'ac') {
             event = actions.clickAllClean;
         }
-        return <button onClick={() => event(cell) }>{cell}</button>
+        return (
+            <button
+                className={'btn'}
+                onClick= {() => event(cell)}>
+                { cell }
+            </button >
+        )
     }
     render() {
         const { children } = this.props;
@@ -46,6 +52,6 @@ export class CalculatorBoard extends React.Component<any, any > {
 
 export class CalculatorMonitor extends React.Component<any, any> {
     render() {
-        return <div>{this.props.textNum}</div>
+        return <div className={'monitor'}>{this.props.textNum}</div>
     }
 }

@@ -7,7 +7,7 @@ const initialState = {
     regNum: "0",
     textOp: null,
     regOp: null,
-    fresh: false,
+    fresh: true,
 };
 
 
@@ -42,14 +42,17 @@ export default function calculator(
                 })
             }
         case C.CLICK_CLEAN:
-            return objectAssign({}, state, { textNum: "0" })
+            return objectAssign({}, state, {
+                textNum: "0",
+                fresh: true,
+            })
         case C.CLICK_ALL_CLEAN:
             return objectAssign({}, state, {
                 textNum: "0",
                 regNum: 0,
                 textOp: null,
                 regOp: null,
-                fresh: false,
+                fresh: true,
             })
         default:
             return state;
