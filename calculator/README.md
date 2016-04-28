@@ -9,6 +9,7 @@ Simple demos
 ============
 
   - [Demo Link](https://tonypythoneer.github.io/react-lab/calculator/index.html)
+  - [Demo Picture](https://tonypythoneer.github.io/react-lab/calculator/calculator.gif)
 
   ![Demo Picture](https://tonypythoneer.github.io/react-lab/calculator/calculator.gif)
 
