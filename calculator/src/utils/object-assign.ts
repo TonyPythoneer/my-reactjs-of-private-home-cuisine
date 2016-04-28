@@ -18,7 +18,7 @@ function toObject(val): Object {
 
 export default function(target: Object, ...sources: Object[]) {
     let to: Object = toObject(target);
-    for (let i: number = 0; i < sources.length; i++) {
+    for (let i: number = 0, len = sources.length; i < len; i++) {
         let s = Object(sources[i]);
         for (let key in s) {
             if (hasOwnProperty.call(s, key)) { to[key] = s[key]; }
