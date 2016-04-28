@@ -1,0 +1,19 @@
+.btn {
+  height: 100px;
+  font-size: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+
+.empty-btn {
+  margin: 50px
+}
+
+
+.monitor {
+  height: 100px;
+  font-size: 50px;
+  width: 400px;
+  text-align: right;
+}
