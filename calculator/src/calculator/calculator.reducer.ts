@@ -11,9 +11,33 @@ const initialState = {
 };
 
 
-export default function calculator(
-    state = initialState,
-    action) {
+/*
+function handleActions <T>(reducerMap: Object, initialState:T) {
+    console.log(reducerMap)
+    function reducer(state:T = initialState, action) {
+        if (reducerMap.hasOwnProperty(action.type)) {
+            return reducerMap[action.type](state, action)
+        }
+        return initialState
+    }
+    return reducer
+}
+
+const reducer = handleActions({
+    [C.INPUT_NUMBER]: (state, action) =>
+        objectAssign({}, state, inputNumberEvent(state, action)),
+    [C.INPUT_OPERATOR]: (state, action) =>
+        objectAssign({}, state, inputOperatorEvent(state, action)),
+    [C.CLICK_CLEAN]: (state, action) =>
+        objectAssign({}, state, { textNum: "0", fresh: true }),
+    [C.CLICK_ALL_CLEAN]: (state, action) =>
+        objectAssign({}, state, initialState),
+}, initialState)
+export default reducer
+*/
+
+
+export default function calculator( state = initialState, action) {
     switch (action.type) {
         case C.INPUT_NUMBER:
             return objectAssign({}, state, inputNumberEvent(state, action));

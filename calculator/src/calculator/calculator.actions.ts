@@ -1,23 +1,12 @@
 import * as C from "./calculator.constants";
 
-import { createAction } from "redux-actions";
 
-
-export function inputNumber(number: string) {
-    return { type: C.INPUT_NUMBER , number }
+const actions = {
+	inputNumber: (number: string) => ({ type: C.INPUT_NUMBER, number }),
+	inputOperator: (op: string) => ({ type: C.INPUT_OPERATOR, op }),
+	clickClean: (number: string) => ({ type: C.CLICK_CLEAN, number }),
+	clickAllClean: (number: string) => ({ type: C.CLICK_ALL_CLEAN, number }),
 }
 
 
-export function inputOperator(op: string) {
-    return { type: C.INPUT_OPERATOR, op }
-}
-
-
-export function clickClean() {
-    return { type: C.CLICK_CLEAN }
-}
-
-
-export function clickAllClean() {
-    return { type: C.CLICK_ALL_CLEAN }
-}
+export default actions;

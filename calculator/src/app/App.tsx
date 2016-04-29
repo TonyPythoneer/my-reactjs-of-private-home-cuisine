@@ -3,7 +3,7 @@ import { createStore, bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import reducer from './reducer';
-import * as calculatorActions from '../calculator/calculator.actions'
+import calculatorActions from '../calculator/calculator.actions'
 import CalculatorApp from '../calculator/calculator.container'
 
 
