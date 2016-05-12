@@ -1,0 +1,31 @@
+{
+  "name": "temp",
+  "version": "1.0.0",
+  "description": "It's a creative canvas lab",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:TonyPythoneer/canvas-lab.git"
+  },
+  "scripts": {
+    "build": "node_modules/.bin/webpack",
+    "watch": "node_modules/.bin/webpack -w"
+  },
+  "author": "TonyPythoneer",
+  "license": "ISC",
+  "typescript": {
+    "definition": "typings/tsd.d.ts"
+  },
+  "dependencies": {
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.0",
+    "react-router-redux": "^4.0.4",
+    "redux": "^3.5.2",
+    "remote-redux-devtools": "^0.3.2"
+  },
+  "devDependencies": {
+    "typescript": "^1.8.10",
+    "webpack": "^1.13.0"
+  }
+}
